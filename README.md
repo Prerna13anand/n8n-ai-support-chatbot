@@ -58,7 +58,7 @@ JSON
   "content": "The return policy for the SmartWatch Pro is accepted within 15 days of delivery."
 }
 
-### Example 1: Out-of-Scope Question
+### Example 2: Out-of-Scope Question
 This is a question that is outside the AI's knowledge base.
 
 Command:
