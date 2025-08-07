@@ -1,0 +1,87 @@
+{
+  "name": "Chatbot workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list",
+          "cachedResultName": "GPT-4O-MINI"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "You are an AI assistant named 'HubBot', the primary AI support for The Tech Hub. Your tone should be efficient, clear, and helpful.\n\nYour knowledge is strictly confined to the data points provided below. Do not use any external information or make assumptions.\n\n- Product Name: SmartWatch Pro\n- Price: ₹12,999\n- Shipping Details: Free, arrives in 5 to 7 business days.\n- Return Policy: Accepted within 15 days of delivery.\n- Support Contact: help@thetechhub.example.com\n\nFor any question that cannot be answered using this data, you must politely respond with: \"I can only provide details about the SmartWatch Pro. For all other inquiries, our support team at help@thetechhub.example.com will be happy to assist you.\"",
+              "role": "system"
+            },
+            {
+              "content": "={{ $json.body.prompt }}\n\n"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        64,
+        0
+      ],
+      "id": "cc57c65d-f0f2-47ad-b1f4-e995878630de",
+      "name": "Message a model",
+      "credentials": {
+        "openAiApi": {
+          "id": "kVqeQ0wOE30XOjBP",
+          "name": "n8n free OpenAI API credits"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "30a1dac6-d14e-4768-8f3e-046bd3515089",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -144,
+        0
+      ],
+      "id": "ae6506d3-4160-4781-99b5-e386517fbc49",
+      "name": "Webhook",
+      "webhookId": "30a1dac6-d14e-4768-8f3e-046bd3515089"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Message a model": {
+      "main": [
+        []
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Message a model",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "7f62ae94-c108-4f24-ab35-9083f72b28c5",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "e62dd26744cb7242d2577fc80474a95235fdf9eb779601d57d196738f3030d70"
+  },
+  "id": "tdAANUvaot6Z32qZ",
+  "tags": []
+}
