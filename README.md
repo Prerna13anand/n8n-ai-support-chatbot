@@ -60,7 +60,8 @@ JSON
 Example 2: Out-of-Scope Question
 This is a question that is outside the AI's knowledge base.
 
-**Command:**
+Command:
+
 ```bash
 curl -X POST -H "Content-Type: application/json" -d "{\"prompt\": \"Tell me a fun fact about Mars.\"}" YOUR_PRODUCTION_URL
 Expected AI Response:
