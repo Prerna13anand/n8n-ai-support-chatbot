@@ -61,9 +61,6 @@ Example 2: Out-of-Scope Question
 This is a question that is outside the AI's knowledge base.
 
 Command:
-
-Bash
-
 curl -X POST -H "Content-Type: application/json" -d '{"prompt": "Tell me a fun fact about Mars."}' YOUR_PRODUCTION_URL
 Expected AI Response:
 
@@ -72,4 +69,3 @@ JSON
 {
   "content": "I can only provide details about the SmartWatch Pro. For all other inquiries, our support team at help@thetechhub.example.com will be happy to assist you."
 }
-
