@@ -38,7 +38,6 @@ This project is a simple but powerful AI assistant built entirely in n8n. It use
     ```
 
 ---
-
 ## Examples
 
 Here are some examples of how the AI will respond based on its defined knowledge base.
@@ -50,6 +49,7 @@ This is a question the AI has been trained to answer.
 **Command:**
 ```bash
 curl -X POST -H "Content-Type: application/json" -d '{"prompt": "What is the return policy?"}' YOUR_PRODUCTION_URL
+```
 Expected AI Response:
 
 JSON
@@ -61,7 +61,10 @@ Example 2: Out-of-Scope Question
 This is a question that is outside the AI's knowledge base.
 
 Command:
+
+```bash
 curl -X POST -H "Content-Type: application/json" -d '{"prompt": "Tell me a fun fact about Mars."}' YOUR_PRODUCTION_URL
+```
 Expected AI Response:
 
 JSON
