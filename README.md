@@ -26,7 +26,7 @@ This project is a simple but powerful AI assistant built entirely in n8n. It use
 
 ## How to Use
 
-1.  **Import the Workflow:** Download the `Chatbot workflow.json` file from this repository and import it into your own n8n instance.
+1.  **Import the Workflow:** Download the `ai-support-workflow.json` file from this repository and import it into your own n8n instance.
 2.  **Configure the Nodes:**
     - Open the **Webhook** node and copy your new **Production URL**.
     - Open the **Message a model** node and ensure your AI provider credentials are set up. You can also customize the **System Prompt** with your own data.
@@ -34,7 +34,7 @@ This project is a simple but powerful AI assistant built entirely in n8n. It use
 4.  **Trigger the Webhook:** Use a command line tool like `curl` to send a question. Replace `YOUR_PRODUCTION_URL` with the URL from your webhook node.
 
     ```bash
-    curl -X POST -H "Content-Type: application/json" -d "{\"prompt\": \"What is the price?\"}" YOUR_PRODUCTION_URL
+    curl -X POST -H "Content-Type: application/json" -d '{"prompt": "What is the price?"}' YOUR_PRODUCTION_URL
     ```
 
 ---
@@ -49,7 +49,7 @@ This is a question the AI has been trained to answer.
 
 **Command:**
 ```bash
-curl -X POST -H "Content-Type: application/json" -d "{\"prompt\": \"What is the return policy?\"}" YOUR_PRODUCTION_URL
+curl -X POST -H "Content-Type: application/json" -d '{"prompt": "What is the return policy?"}' YOUR_PRODUCTION_URL
 Expected AI Response:
 
 JSON
@@ -62,8 +62,9 @@ This is a question that is outside the AI's knowledge base.
 
 Command:
 
-```bash
-curl -X POST -H "Content-Type: application/json" -d "{\"prompt\": \"Tell me a fun fact about Mars.\"}" YOUR_PRODUCTION_URL
+Bash
+
+curl -X POST -H "Content-Type: application/json" -d '{"prompt": "Tell me a fun fact about Mars."}' YOUR_PRODUCTION_URL
 Expected AI Response:
 
 JSON
@@ -71,5 +72,4 @@ JSON
 {
   "content": "I can only provide details about the SmartWatch Pro. For all other inquiries, our support team at help@thetechhub.example.com will be happy to assist you."
 }
-
 
